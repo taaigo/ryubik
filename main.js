@@ -3,7 +3,12 @@ const path = require("node:path");
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
 const conf = require("./conf.json");
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const client = new Client({ intents: [
+        GatewayIntentBits.Guilds,
+        GatewayIntentBits.GuildMessages,
+        GatewayIntentBits.Guilds,
+        GatewayIntentBits.MessageContent
+    ]});
 
 client.commands = new Collection();
 
@@ -44,7 +49,7 @@ client.on(Events.InteractionCreate, async interaction =>
 
     try
     {
-        await command.execute(interaction);
+        await command.execute(interaction, client);
     }
     catch (error)
     {

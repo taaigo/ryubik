@@ -25,32 +25,26 @@ module.exports =
         {
             case "2x2":
                 out = generateScrambleSync(9, 2);
-                interaction.reply(out.scramble);
                 break;
             case "3x3":
                 out = generateScrambleSync(20, 3);
-                interaction.reply(out.scramble);
                 break;
             case "4x4":
                 out = generateScrambleSync(40, 4);
-                interaction.reply(out.scramble);
                 break;
             case "5x5":
                 out = generateScrambleSync(60, 5);
-                interaction.reply(out.scramble);
                 break;
-           case "6x6":
-               out = generateScrambleSync(80, 6);
-               interaction.reply(out.scramble);
-               break;
-           case "7x7":
-               out = generateScrambleSync(100, 7);
-               interaction.reply(out.scramble);
-               break;
+            case "6x6":
+                out = generateScrambleSync(80, 6);
+                break;
+            case "7x7":
+                out = generateScrambleSync(100, 7);
+                break;
             default:
                 out = generateScrambleSync(20, 3);
-                interaction.reply(out.scramble);
                 break;
         }
-    },
+        interaction.reply(out.scramble);
+    }
 };

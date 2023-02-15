@@ -9,9 +9,9 @@ module.exports =
     async execute(interaction)
     {
         if (fs.existsSync(`./scoredb/${interaction.user.id}/`)) return interaction.reply("You are already in the database.");
-        for (i = 0; i < 7; i++)
+        for (i = 0; i < 6; i++)
         {
-            fs.mkdirSync(`./scoredb/${interaction.user.id}/${i+1}scores`, { recursive: true });
+            fs.mkdirSync(`./scoredb/${interaction.user.id}/${i+2}scores`, { recursive: true });
         }
         console.log(`${interaction.user.id} got added to the score database.`);
         interaction.reply("You got added to the score successfully.");
